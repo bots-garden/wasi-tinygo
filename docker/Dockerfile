@@ -1,13 +1,18 @@
 FROM gitpod/workspace-full
 
 ARG TINYGO_VERSION="0.21.0"
-
-
+ARG GO_VERSION="1.17.5"
 
 RUN sudo apt-get update && \
     sudo apt-get install gettext libncurses5 libxkbcommon0 libtinfo5 -y
 
 USER gitpod
+
+# GoLang
+RUN curl -sL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer| bash
+
+RUN ["/bin/bash", "-c", ". /home/gitpod/.gvm/scripts/gvm && gvm install go${GO_VERSION} -B"]
+RUN ["/bin/bash", "-c", ". /home/gitpod/.gvm/scripts/gvm && gvm use go${GO_VERSION}"]
 
 # TinyGo
 RUN wget https://github.com/tinygo-org/tinygo/releases/download/v${TINYGO_VERSION}/tinygo_${TINYGO_VERSION}_amd64.deb
