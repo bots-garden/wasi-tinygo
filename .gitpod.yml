@@ -1,4 +1,4 @@
-image: k33g/bots-garden-wasi-tinygo-socket:0.0.1
+image: k33g/bots-garden-wasi-tinygo:0.0.0
 
 tasks:
   - name: initialize
@@ -8,11 +8,11 @@ tasks:
       # GoLang
       # ------------------------------------
 
-      source /home/gitpod/.gvm/scripts/gvm
-      gvm use go1.17.5
+      #source /home/gitpod/.gvm/scripts/gvm
+      #gvm use go1.17.5
 
-      sudo echo "source /home/gitpod/.gvm/scripts/gvm" >> $HOME/.bashrc
-      sudo echo "gvm use go1.17.5" >> $HOME/.bashrc
+      #sudo echo "source /home/gitpod/.gvm/scripts/gvm" >> $HOME/.bashrc
+      #sudo echo "gvm use go1.17.5" >> $HOME/.bashrc
 
       # ------------------------------------
       # wasmer

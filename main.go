@@ -2,15 +2,16 @@ package main
 
 import (
 	"fmt"
-	"net/http"
+	"os" 
 )
-
-func hello(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "hello\n")
-}
 
 func main() {
 
-	http.HandleFunc("/hello", hello)
-	http.ListenAndServe(":8080", nil)
+	fmt.Println("👋 Hello World from Go 🌍")
+	args := os.Args
+	argsWithoutCaller := os.Args[1:]
+
+	fmt.Println(args)
+	fmt.Println(argsWithoutCaller)
+
 }
