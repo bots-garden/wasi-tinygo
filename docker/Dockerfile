@@ -19,8 +19,6 @@ RUN wget https://github.com/tinygo-org/tinygo/releases/download/v${TINYGO_VERSIO
 RUN sudo dpkg -i tinygo_${TINYGO_VERSION}_amd64.deb
 RUN rm tinygo_${TINYGO_VERSION}_amd64.deb
 
-
-
 # ------------------------------------
 # Install tools
 # ------------------------------------
